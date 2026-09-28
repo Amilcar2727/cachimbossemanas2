@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmp8yoyxss02e"]
+
+[ext_resource type="Script" path="res://chatbot.gd" id="1_6q27s"]
+[ext_resource type="Texture2D" uid="uid://cq47x7sdk63gs" path="res://icon.svg" id="1_m45et"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6q27s")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 472.0
+offset_top = 420.0
+offset_right = 659.0
+offset_bottom = 473.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 668.0
+offset_top = 168.0
+offset_right = 854.0
+offset_bottom = 221.0
+text = "Dime algo..."
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(570, 297)
+texture = ExtResource("1_m45et")
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
