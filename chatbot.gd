@@ -7,11 +7,15 @@ extends Node2D
 var nombre = "Godi"
 
 func _ready() -> void:
-	label.text = "Hola, soy " + nombre + ". Dime algo!...";
+	label.text = "Hola, soy " + nombre + ". Dime algo!..."; #Inicializamos el texto
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
-	if new_text.contains("hola"):
-		label.text = "Hola, te saludo!";
-	else:
-		label.text = "Ok.. entonces tu eres un " + new_text + "?";
+	line_edit.clear(); #Limpia el apartado de input
+	new_text = new_text.to_lower(); #Cambiamos a minusculas
 	
+	if new_text.contains("hola"): #SI: El texto contiene un 'hola'
+		#Cambiamos el texto
+		label.text = "Hola, te saludo!";
+	else: #CASO CONTRARIO:
+		#Cambiamos el texto
+		label.text = "Ok.. entonces tu eres un " + new_text + "?";
